@@ -1,0 +1,13 @@
+1- SELECT w.firstname,w.lastname,p.role,t.name FROM wizard as w JOIN player as p ON w.id=p.wizard_id JOIN team as t ON p.team_id=t.id ORDER by t.name ASC
+
+1- SELECT w.firstname,w.lastname,p.role,t.name FROM wizard as w JOIN player as p ON w.id=p.wizard_id JOIN team as t ON p.team_id=t.id ORDER by p.role ASC 
+
+1- SELECT w.firstname,w.lastname,p.role,t.name FROM wizard as w JOIN player as p ON w.id=p.wizard_id JOIN team as t ON p.team_id=t.id ORDER by w.lastname ASC 
+
+1- SELECT w.firstname,w.lastname,p.role,t.name FROM wizard as w JOIN player as p ON w.id=p.wizard_id JOIN team as t ON p.team_id=t.id ORDER by w.firstname ASC 
+
+2- SELECT w.firstname,w.lastname FROM wizard as w JOIN player as p ON w.id=p.wizard_id WHERE p.role='seeker' ORDER by w.firstname ASC 
+
+2- SELECT w.firstname,w.lastname FROM wizard as w JOIN player as p ON w.id=p.wizard_id WHERE p.role='seeker' ORDER by w.lastname ASC 
+
+3- SELECT w.firstname, w.lastname FROM wizard as w where not EXISTS(SELECT * from player as p WHERE p.wizard_id=w.id)
